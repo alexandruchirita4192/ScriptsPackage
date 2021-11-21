@@ -14,3 +14,8 @@ ScriptsPackage/.vs/ScriptsPackage/v16/.suo
 ScriptsPackage/Output/MetatraderLog_DatabaseStructure.sql
 ScriptsPackage/ScriptsPackage.csproj.user
 ScriptsPackage/ScriptsPackage.v12.suo
+ScriptsPackage/.vs/ScriptsPackage/v17/.suo
+ScriptsPackage/bin/Debug/ScriptsPackage.exe.config
+ScriptsPackage/obj/Debug/.NETFramework,Version=v4.8.AssemblyAttributes.cs
+ScriptsPackage/obj/Debug/ScriptsPackage.csproj.SuggestedBindingRedirects.cache
+MetatraderLog_DatabaseStructure.sql

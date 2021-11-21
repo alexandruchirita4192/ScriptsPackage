@@ -6,15 +6,16 @@ using System.Text;
 
 namespace PackagingApplication
 {
-    class PackageContainer
+    public class PackageContainer
     {
-        #region ctor
+        #region Constructor
+
         public PackageContainer(IEnumerable<PackageContainer> childrenList)
         {
             directory = null;
             children = childrenList.ToList();
         }
-        
+
         public PackageContainer(string packageDirectory)
         {
             directory = packageDirectory;
@@ -26,69 +27,75 @@ namespace PackagingApplication
             directory = packageDirectory;
             children = childrenList.ToList();
         }
-        #endregion ctor
 
-        #region Properties
+        #endregion Constructor
+
+        #region Fields
+
         private string directory;
         private List<PackageContainer> children;
-        #endregion Properties
+
+        #endregion Fields
 
         #region Methods
+
         public string GetPackageContent(string prefixDirectory = null)
         {
-            string output = String.Empty;
+            var output = new StringBuilder();
 
-            if(!String.IsNullOrEmpty(directory))
+            if (!string.IsNullOrEmpty(directory))
             {
                 var packageDirectory = directory;
-                if (!String.IsNullOrEmpty(prefixDirectory))
-                    packageDirectory = prefixDirectory + "\\" + packageDirectory;
+                if (!string.IsNullOrEmpty(prefixDirectory))
+                    packageDirectory = $"{prefixDirectory}\\{packageDirectory}";
                 var files = Directory.GetFiles(packageDirectory);
 
-                if(files.Length != 0)
-                foreach(var file in files)
-                {
-                    try
+                if (files.Length != 0)
+                    foreach (var file in files)
                     {
-                        var fileContent = String.Empty;
-                        //fileContent += "/*" + Environment.NewLine + " * File '" + file.Replace("..\\","") + "'" + Environment.NewLine + " */" + Environment.NewLine;
-                        fileContent += "-- File '" + file.Replace("..\\", "") + "'" + Environment.NewLine;
-                        fileContent += File.ReadAllText(file);
-                        fileContent += Environment.NewLine;
-                        output += fileContent;
+                        try
+                        {
+                            var fileContent = new StringBuilder();
+                            //fileContent.Append($"/*{Environment.NewLine} * File '{file.Replace("..\\","")}'{Environment.NewLine} */{Environment.NewLine}");
+                            fileContent.Append($"-- File '{file.Replace("..\\", "")}'{Environment.NewLine}");
+                            fileContent.Append(File.ReadAllText(file));
+                            fileContent.Append(Environment.NewLine);
+                            output.Append(fileContent.ToString());
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"File {file} not added! Exception {ex}");
+                        }
                     }
-                    catch (Exception ex) {
-                        Console.WriteLine("File " + file + " not added! Exception " + ex.ToString());
-                    }
-                }
 
                 if (children != null && children.Count > 0)
                     foreach (var child in children)
-                        output += child.GetPackageContent(packageDirectory);
+                        output.Append(child.GetPackageContent(packageDirectory));
             }
             else
             {
                 if (children != null && children.Count > 0)
                     foreach (var child in children)
-                        output += child.GetPackageContent();
+                        output.Append(child.GetPackageContent());
             }
 
-            return output;
+            return output.ToString();
         }
 
         public void WritePackageContentToFile(string outputDirectory, string outputFile)
         {
             try
             {
-                StreamWriter file = new StreamWriter(outputDirectory + "\\" + outputFile);
+                StreamWriter file = new StreamWriter($"{outputDirectory}\\{outputFile}");
                 file.WriteLine(GetPackageContent());
                 file.Close();
             }
             catch (Exception ex)
             {
-                Console.WriteLine("WritePackageContentToFile exception: " + ex.ToString());
+                Console.WriteLine($"WritePackageContentToFile exception: {ex}");
             }
         }
+
         #endregion Methods
     }
 }
