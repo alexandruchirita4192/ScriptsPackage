@@ -1,0 +1,9 @@
+﻿IF OBJECT_ID('LastLogProcedure') IS NULL
+CREATE TABLE LastLogProcedure (
+	LastLogProcedureId INT IDENTITY(1,1) PRIMARY KEY,
+	LogText VARCHAR(1000)
+);
+ELSE
+UPDATE STATISTICS LastLogProcedure
+GO
+

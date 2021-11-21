@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF965FD6-CD3D-4657-AB96-77EB19DA15A3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ScriptsPackage</RootNamespace>
+    <AssemblyName>ScriptsPackage</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PackageContainer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\06.StoredProcedures\02.ManualFix\03.Load\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Output\MetatraderLog_DatabaseStructure.sql" />
+    <Content Include="Scripts\01.ScriptVersion\03.MetatraderResultsClean.sql" />
+    <Content Include="Scripts\01.ScriptVersion\02.DatabaseVersionOnSpid.sql" />
+    <Content Include="Scripts\01.ScriptVersion\01.DatabaseCreation.sql" />
+    <Content Include="Scripts\01.ScriptVersion\04.CleanAllButTables.sql" />
+    <Content Include="Scripts\02.Tables\07.DecisionsConfig.sql" />
+    <Content Include="Scripts\02.Tables\08.ConfigTable.sql" />
+    <Content Include="Scripts\02.Tables\09.LastLogProcedure.sql" />
+    <Content Include="Scripts\03.DefaultData\01.DatabaseVersion.sql" />
+    <Content Include="Scripts\02.Tables\06.DataLogDetail.sql" />
+    <Content Include="Scripts\02.Tables\05.DataLog.sql" />
+    <Content Include="Scripts\02.Tables\04.ProcedureLog.sql" />
+    <Content Include="Scripts\02.Tables\03.DebugLog.sql" />
+    <Content Include="Scripts\02.Tables\02.TradingSession.sql" />
+    <Content Include="Scripts\02.Tables\01.DatabaseVersion.sql" />
+    <Content Include="Scripts\03.DefaultData\07.DecisionsConfig.sql" />
+    <Content Include="Scripts\03.DefaultData\06.DataLogDetail.sql" />
+    <Content Include="Scripts\03.DefaultData\05.DataLog.sql" />
+    <Content Include="Scripts\03.DefaultData\04.ProcedureLog.sql" />
+    <Content Include="Scripts\03.DefaultData\03.DebugLog.sql" />
+    <Content Include="Scripts\03.DefaultData\02.TradingSession.sql" />
+    <Content Include="Scripts\03.DefaultData\08.ConfigTable.sql" />
+    <Content Include="Scripts\04.Views\06.vwResults.sql" />
+    <Content Include="Scripts\04.Views\05.vwAggregateDetails.sql" />
+    <Content Include="Scripts\04.Views\04.vwInitialAggregateDetails.sql" />
+    <Content Include="Scripts\04.Views\03.vwXmlExtractIntoTable.sql" />
+    <Content Include="Scripts\04.Views\02.vwDataToXml.sql" />
+    <Content Include="Scripts\04.Views\01.vwTradingSession.sql" />
+    <Content Include="Scripts\05.Functions\03.UDF_GetLastProcedureLog.sql" />
+    <Content Include="Scripts\05.Functions\02.UDF_GetLastDataLog.sql" />
+    <Content Include="Scripts\05.Functions\01.UDF_GetLastSession.sql" />
+    <Content Include="Scripts\06.StoredProcedures\00.Tracing\01.USP_LogLastProcedure.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\01.Extract\03.USP_DebugLog.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\01.Extract\07.USP_DataLogDetail.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\01.Extract\06.USP_DataLog.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\01.Extract\05.USP_EndProcedureLog.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\01.Extract\04.USP_StartProcedureLog.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\01.Extract\02.USP_EndTradingSession.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\01.Extract\01.USP_NewTradingSession.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\02.Transform\1.USP_GetResultsFromSessionId.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\03.Load\09.USP_GetConfigTableData.sql" />
+    <Content Include="Scripts\06.StoredProcedures\02.ManualFix\02.Transform\03.USP_DeleteAllSessions.sql" />
+    <Content Include="Scripts\06.StoredProcedures\02.ManualFix\02.Transform\02.USP_DeleteLastSession.sql" />
+    <Content Include="Scripts\06.StoredProcedures\02.ManualFix\02.Transform\01.USP_DeleteSymbolData.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\02.Transform\2.USP_GetResultsFromSessionName.sql" />
+    <Content Include="Scripts\06.StoredProcedures\02.ManualFix\02.Transform\04.USP_MoveDataFromSessionId.sql" />
+    <Content Include="Scripts\06.StoredProcedures\02.ManualFix\02.Transform\06.USP_ValidateData.sql" />
+    <Content Include="Scripts\06.StoredProcedures\02.ManualFix\02.Transform\05.USP_MoveDataFromSessionName.sql" />
+    <Content Include="Scripts\06.StoredProcedures\02.ManualFix\01.Extract\01.USP_GetValidTradingSessionsAndQueries.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\03.Load\08.USP_GetLastSymbolOfSimulation.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\03.Load\07.USP_ReadResultFromSymbol.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\03.Load\06.USP_ReadResult.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\03.Load\05.USP_ReadResults.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\03.Load\04.USP_ReadLastDataLogAndDetail.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\03.Load\03.USP_ReadLastDataLogDetail.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\03.Load\02.USP_ReadLastProcedureLog.sql" />
+    <Content Include="Scripts\06.StoredProcedures\01.Automatic\03.Load\01.USP_ReadLastDataLog.sql" />
+    <Content Include="Scripts\07.PrintResults\03.PrintResults.sql" />
+    <Content Include="Scripts\07.PrintResults\02.USP_GetValidTradingSessionsAndQueries.sql" />
+    <Content Include="Scripts\07.PrintResults\01.ReCalculateResults.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

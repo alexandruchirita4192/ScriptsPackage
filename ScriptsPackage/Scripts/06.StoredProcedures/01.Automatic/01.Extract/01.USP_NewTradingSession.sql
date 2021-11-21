@@ -1,0 +1,10 @@
+﻿IF OBJECT_ID('USP_NewTradingSession') IS NOT NULL
+	DROP PROCEDURE USP_NewTradingSession;
+GO
+CREATE PROCEDURE USP_NewTradingSession(@Name VARCHAR(8000))
+AS
+BEGIN
+	INSERT INTO TradingSession(StartTime, Name)
+	SELECT GETDATE(), @Name
+END
+GO

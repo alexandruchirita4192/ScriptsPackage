@@ -1,0 +1,13 @@
+﻿IF OBJECT_ID('DataLog') IS NULL
+CREATE TABLE DataLog (
+	DataLogId INT IDENTITY(1,1) PRIMARY KEY,
+	Name VARCHAR(250),
+	Data VARCHAR(8000),
+	LogTime DATETIME,
+	SessionId INT,
+	CONSTRAINT FK_DataLog_SessionId FOREIGN KEY (SessionId) REFERENCES TradingSession(SessionId)
+);
+ELSE
+UPDATE STATISTICS DataLog
+GO
+

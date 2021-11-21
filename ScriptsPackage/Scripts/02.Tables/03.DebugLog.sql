@@ -1,0 +1,12 @@
+﻿IF OBJECT_ID('DebugLog') IS NULL
+CREATE TABLE DebugLog (
+	DebugLogId INT IDENTITY(1,1) PRIMARY KEY,
+	DebugTime DATETIME NOT NULL DEFAULT(GETDATE()),
+	DebugData VARCHAR(8000),
+	SessionId INT,
+	CONSTRAINT FK_DebugLog_SessionId FOREIGN KEY (SessionId) REFERENCES TradingSession(SessionId)
+);
+ELSE
+UPDATE STATISTICS DebugLog
+GO
+

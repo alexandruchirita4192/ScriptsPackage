@@ -1,0 +1,16 @@
+
+ScriptsPackage/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttributes.cs
+ScriptsPackage/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+ScriptsPackage/obj/Debug/ScriptsPackage.csproj.AssemblyReference.cache
+ScriptsPackage/obj/Debug/ScriptsPackage.csproj.CoreCompileInputs.cache
+ScriptsPackage/obj/Debug/ScriptsPackage.csproj.FileListAbsolute.txt
+ScriptsPackage/obj/Debug/ScriptsPackage.csprojResolveAssemblyReference.cache
+ScriptsPackage/obj/Debug/ScriptsPackage.exe
+ScriptsPackage/obj/Debug/ScriptsPackage.pdb
+ScriptsPackage/.vs/ScriptsPackage/v14/.suo
+ScriptsPackage/.vs/ScriptsPackage/v16/.suo
+*.exe
+*.pdb
+ScriptsPackage/Output/MetatraderLog_DatabaseStructure.sql
+ScriptsPackage/ScriptsPackage.csproj.user
+ScriptsPackage/ScriptsPackage.v12.suo

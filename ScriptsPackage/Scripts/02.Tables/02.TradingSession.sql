@@ -1,0 +1,10 @@
+﻿IF OBJECT_ID('TradingSession') IS NULL
+CREATE TABLE TradingSession (
+	SessionId INT IDENTITY(1,1) PRIMARY KEY,
+	StartTime DATETIME,
+	EndTime DATETIME,
+	Name VARCHAR(8000)
+);
+ELSE
+UPDATE STATISTICS TradingSession
+GO
