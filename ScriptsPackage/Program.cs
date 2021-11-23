@@ -41,7 +41,6 @@ namespace PackagingApplication
 
             Console.Write("Packaging started");
             container.WritePackageContentToFile("..\\..\\Output", "MetatraderLog_DatabaseStructure.sql");
-            File.Copy("..\\..\\Output\\MetatraderLog_DatabaseStructure.sql", "..\\..\\..\\MetatraderLog_DatabaseStructure.sql", true);
             Console.WriteLine(".. done!");
             Console.ReadKey();
         }
