@@ -6,6 +6,9 @@ using System.Text;
 
 namespace PackagingApplication
 {
+    /**
+     * A container for scripts created from scratch based on a pattern
+     */
     public class PackageContainer
     {
         #region Constructor
@@ -64,7 +67,7 @@ namespace PackagingApplication
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine($"File {file} not added! Exception {ex}");
+                            Console.WriteLine($"File {file} not added! Except    ion {ex}");
                         }
                     }
 
